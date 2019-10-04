@@ -2,9 +2,7 @@ title: Nine Nayoungs
 author: Nayoung Park
 email: qkrskdud0805@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
- - In-house sources
- - Reports and solutions of running programs handling genome data
-
+ Containing In-house source codes dealing with various biological data formats and Reports-Solutions or various programs handling genome data
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
