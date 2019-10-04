@@ -9,7 +9,7 @@ title: R을 활용해 아미노산 지도 그리기(aamap, amino-acid map)
 
 레퍼런스로 활용한 논문은 [Coactivator condensation at super-enhancers links phase separation and gene control][paper]라는 제목을 가지고있는데, 이 논문의 figure중에 다음과 같은 그림이 있다. 
 
-![med1](../assets/images/MED1.png)
+![med1](/assets/images/MED1.png)
 이런 그림을 그리고자 했다.! (옆 연구실 친구의 부탁으로 위와 같은 그림을 그려주는 코드가 있는지 알아보는데, 고전 사이트로 보이는 [Guide to Human Genome][refsite]에서 유사한 이미지를 `aamap`이라는 이름으로 제공하고 있었지만 위 레퍼런스 논문의 메쏘드나, 고전 사이트 어디에서도-물론 구글링도 한참 했다- 이런 그림을 그려주는 코드를 찾을 수 없었다.)
 
 ggplot2패키지에서 히트맵(heat-map)을 그리는 용도로 사용되는 geom_tile()을 활용해 구현해 보았다. 이쪽 분야에서 heatmap은 주로 발현 정도(..)를 비롯한 연속적인 수치를 나타내는 데 사용되는데, 특정 시퀀스의 존재 여부를 신호로 생각하고 heatmap을 활용해서 그려보고자 했다.
@@ -22,7 +22,7 @@ ggplot2패키지에서 히트맵(heat-map)을 그리는 용도로 사용되는 g
 5. reference와 유사하게(단백질 시퀀스가 가지는 아미노산 패턴을 보다 잘 확인할 수 있도록 불필요한 요소들을 빼는 작업) 보이도록 plot의 세부 사항들을 조절한다. 
 
 한 단계씩 살펴보면
-* 1~2. 단백질 시퀀스의 아미노산을 하나씩 읽고, 아미노산의 종류, 시퀀스 내에서의 위치를 저장한다. *
+1~2. 단백질 시퀀스의 아미노산을 하나씩 읽고, 아미노산의 종류, 시퀀스 내에서의 위치를 저장한다.
 ``` R
 library(ggplot2)
 seq = "MSSLLERLHAKFNQNRPWSETIKLVRQVMEKRVVMSSGGHQHLVSCLETLQKALKVTSLPAMTDRLESIARQNGLGSHLSASGTECYITSDMFYVEVQLDPAGQLCDVKVAHHGENPVSCPELVQQLREKNFEEFSKHLKGLVNLYNLPGDNKLKTKMYLALQSLEQDLSKMAIMYWKATNAAPLDKILHGSVGYLTPRSGGHLMNMKYYASPSDLLDDKTASPIILHEKNVPRSLGMNASVTIEGTSAMYKLPIAPLIMGSHPADNKWTPSFSAVTSANSVDLPACFFLKFPQPIPVSKAFVQKLQNCTGIPLFETPPTYLPLYELITQFELSKDPDPLPLNHNMRFYAALPGQQHCYFLNKDAPLPDGQSLQGTLVSKITFQHPGRVPLILNMIRHQVAYNTLIGSCVKRTILKEDSPGLLQFEVCPLSESRFSVSFQHPVNDSLVCVVMDVQDSTHVSCKLYKGLSDALICTDDFIAKVVQRCMSIPVTMRAIRRKAETIQADTPALSLIAETVEDMVKKNLPPASSPGYGMTTGNNPMSGTTTPTNTFPGGPITTLFNMSMSIKDRHESVGHGEDFSKVSQNPILTSLLQITGNGGSTIGSSPTPPHHTPPPVSSMAGNTKNHPMLMNLLKDNPAQDFSTLYGSSPLERQNSSSGSPRMEMCSGSNKAKKKKSSRVPPDKPKHQTEDDFQRELFSMDVDSQNPMFDVSMTADALDTPHITPAPSQCSTPPATYPQPVSHPQPSIQRMVRLSSSDSIGPDVTDILSDIAEEASKLPSTSDDCPPIGTPVRDSSSSGHSQSALFDSDVFQTNNNENPYTDPADLIADAAGSPNSDSPTNHFFPDGVDFNPDLLNSQSQSGFGEEYFDESSQSGDNDDFKGFASQALNTLGMPMLGGDNGEPKFKGSSQADTVDFSIISVAGKALGAADLMEHHSGSQSPLLTTGELGKEKTQKRVKEGNGTGASSGSGPGSDSKPGKRSRTPSNDGKSKDKPPKRKKADTEGKSPSHSSSNRPFTPPTSTGGSKSPGSSGRSQTPPGVATPPIPKITIQIPKGTVMVGKPSSHSQYTSSGSVSSSGSKSHHSHSSSSSSLASASTSGKVKSSKSEGSSSSKLSGSMYASQGSSGSSQSKNSSQTGGKPGSSPITKHGLSSGSSSTKMKPQGKPSSLMNPSISKPNISPSHSRPPGGSDKLASPMKPVPGTPPSSKAKSPISSGSSGSHVSGTSSSSGMKSSSGSASSGSVSQKTPPASNSCTPSSSSFSSSGSSMSSSQNQHGSSKGKSPSRNKKPSLTAVIDKLKHGVVTSGPGGEDPIDSQMGASTNSSNHPMSSKHNTSGGEFQSKREKSDKDKSKVSASGGSVDSSKKTSESKNVGSTGVAKIIISKHDGGSPSIKAKVTLQKPGESGGDGLRPQIASSKNYGSPLISGSTPKHERGSPSHSKSPAYTPQNVDSESESGSSIAERSYQNSPSSEDGIRPLPEYSTEKHKKHKKEKKKVRDKDRDKKKSHSMKPENWSKSPISSDPTASVTNNPILSADRPSRLSPDFMIGEEDDDLMDVALIGN"
@@ -37,22 +37,22 @@ for (i in 1:nchar(seq)){
 }
 ```
 
-* 3. 개별적으로 만들어진 세 가지 벡터를 하나의 데이터프레임으로 묶는다. *
+3. 개별적으로 만들어진 세 가지 벡터를 하나의 데이터프레임으로 묶는다.
 ``` R
 df<-data.frame() # initialize data frame
 df<- data.frame(position, amino_acids, on_off)
 ```
 
-*4. (3)에서 만든 데이터프레임을 ggplot을 활용, heatmap으로 그려준다.*
+4. (3)에서 만든 데이터프레임을 ggplot을 활용, heatmap으로 그려준다.
 ``` R
 p<- ggplot(df, aes(x=position, y=amino_acids, fill=on_off))
 p<- p+geom_tile(fill="black")
 ```
 `fill=block` 옵션을 주긴 했는데, 해당 옵션을 주지 않았다고 생각하고 그림을 먼저 확인해보면 다음과 같다.
-![med_v1](../assets/images/MED_v1.png)
+![med_v1](/assets/images/MED_v1.png)
 
 
-*5. ggplot의 세부 옵션들을 조정해 그림을 다듬는다.*
+5. ggplot의 세부 옵션들을 조정해 그림을 다듬는다.
 ``` R
 p<-p+scale_x_discrete(expand=c(0,0))
 p<-p+scale_y_discrete(position="right")
@@ -66,11 +66,11 @@ p <- p+theme(axis.text.y=element_text(color=ifelse(levels(df$amino_acids)=="L","
 
 
 모든 조건을 조절해 주었을 때 최종적으로 완성된 그림은 다음과 같다.
-![med_v2](../assets/images/MED_v2.png)
+![med_v2](/assets/images/MED_v2.png)
 
 저장은 아래과 같은 식으로 저장할 수 있고, Rstudio에서 직접 export할 수 있다.
 ``` R
-ggsave("example.png", plot=last_plot()))
+ggsave("example.png", plot=last_plot())
 ```
 [paper]: http://dx.doi.org/10.1126/science.aar3958
 [refsite]: http://www.cshlp.org/ghg5_db/recinfo/224/22415.shtml
