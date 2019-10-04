@@ -1,2 +1,2 @@
-##storing images for blog
+Storing images for blog
 -
