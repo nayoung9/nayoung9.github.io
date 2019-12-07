@@ -65,15 +65,15 @@ What's new in Tensorflow2.0?
 
     - autoencoder 의 인풋벡터를 decoder에 제공해서 decoding 에 도움 주는 개념인 UNET 적용
 
-        ![Devfest%20on%20campus%202019/Untitled%205.png](Devfest%20on%20campus%202019/Untitled%205.png)
+        ![https://www.notion.so/nayoung0805/Devfest-on-campus-2019-7d7b500f2cb34fb9b5f42b34cbb83861#de5ee073e8614a36a3b6730633082ba9](Devfest%20on%20campus%202019/Untitled%205.png)
 
     - autoencoder 에서 generating 할 때 암호화된 중간 레이어에 카테고리벡터를 추가해 연산: 출력 폰트 스타일 결정 \
 
-        ![Devfest%20on%20campus%202019/Untitled%206.png](Devfest%20on%20campus%202019/Untitled%206.png)
+        ![https://www.notion.so/nayoung0805/Devfest-on-campus-2019-7d7b500f2cb34fb9b5f42b34cbb83861#45ec0c731ced48f29cfefab25803b2a9](Devfest%20on%20campus%202019/Untitled%206.png)
 
     - transfer learning이 제대로 이루어지는 지 확인하는 과정: **Interpolation**
 
-        ![Devfest%20on%20campus%202019/Untitled%207.png](Devfest%20on%20campus%202019/Untitled%207.png)
+        ![https://www.notion.so/nayoung0805/Devfest-on-campus-2019-7d7b500f2cb34fb9b5f42b34cbb83861#4e9cf04b70f44b5da844330f014c91e9](Devfest%20on%20campus%202019/Untitled%207.png)
 
 - 프로젝트 진행상의 팁
     - 실험하는데 발생하는 이슈 기록
