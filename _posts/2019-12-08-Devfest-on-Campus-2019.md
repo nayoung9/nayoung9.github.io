@@ -27,21 +27,21 @@ What's new in Tensorflow2.0?
 
     아래 그림을 보면 2.0의 프린트 결과를 통해 객체 안에 값이 이미 계산되어 들어있는 것을 확인할 수 있다.
 
-    ![](Devfest%20on%20campus%202019/Untitled%201.png)
+    ![compare1](/assets/images/191218exageraterun.png)
 
 - 전역변수 초기화 없고 자동으로 되며 파이썬 변수를 이용한 연산이 가능해 졌다
 
-    ![Devfest%20on%20campus%202019/Untitled%202.png](Devfest%20on%20campus%202019/Untitled%202.png)
+    ![compare2_nosession](/assets/images/191218nosession.png)
 
 - autograph 기능을 통해 파이썬 함수를 만들 듯이 그래프 코드를 작성할 수 있다고 한다. (정확하게는 이해하지 못했다.ㅠㅠ 파이썬으로 함수 만들고 데코 쓰면 된다! 라고 필기해놓은 나.. 이래서 다들 공부 공부 하나보다.)
 
-    ![Devfest%20on%20campus%202019/Untitled%203.png](Devfest%20on%20campus%202019/Untitled%203.png)
+    ![Autograph](/assets/images/191218autograph.png)
 
 - Keras API 가 포함되었다(?).
 
     사실 API 같은 개념이 잡혀있지 않아서... 대략 감으로 이해했는데, keras 를 따로 import 해서 사용하곤 했는데 tf 내에  포함된 keras 를 쓸 수 있다고 이해했다. 모르긴 해도 아주 간단한 코드로 신경망을 만들 수 있다고 이해했다. functional 한 방법으로는 함수를 만들어서 앞 층의 출력을 다음 층의 입력으로 넣거나, 출력을 여러 입력으로 받거나 혹은 여러 층의 출력을 다음 한 층의 입력으로 받거나 하는 등 다양한 형태의 연산이 가능하다고 했다.
 
-    ![Devfest%20on%20campus%202019/Untitled%204.png](Devfest%20on%20campus%202019/Untitled%204.png)
+    ![keras](/assets/images/191218keras.png)
 
 - Summary method:
 
@@ -65,15 +65,15 @@ What's new in Tensorflow2.0?
 
     - autoencoder 의 인풋벡터를 decoder에 제공해서 decoding 에 도움 주는 개념인 UNET 적용
 
-        ![https://www.notion.so/nayoung0805/Devfest-on-campus-2019-7d7b500f2cb34fb9b5f42b34cbb83861#de5ee073e8614a36a3b6730633082ba9](Devfest%20on%20campus%202019/Untitled%205.png)
+        ![unet](/assets/images/191218unet.png)
 
-    - autoencoder 에서 generating 할 때 암호화된 중간 레이어에 카테고리벡터를 추가해 연산: 출력 폰트 스타일 결정 \
+    - autoencoder 에서 generating 할 때 암호화된 중간 레이어에 카테고리벡터를 추가해 연산: 출력 폰트 스타일 결정 
 
-        ![https://www.notion.so/nayoung0805/Devfest-on-campus-2019-7d7b500f2cb34fb9b5f42b34cbb83861#45ec0c731ced48f29cfefab25803b2a9](Devfest%20on%20campus%202019/Untitled%206.png)
+        ![transfer](/assets/images/191218_styletransfer.png)
 
     - transfer learning이 제대로 이루어지는 지 확인하는 과정: **Interpolation**
 
-        ![https://www.notion.so/nayoung0805/Devfest-on-campus-2019-7d7b500f2cb34fb9b5f42b34cbb83861#4e9cf04b70f44b5da844330f014c91e9](Devfest%20on%20campus%202019/Untitled%207.png)
+        ![interpolation](/assets/images/interpolation.png)
 
 - 프로젝트 진행상의 팁
     - 실험하는데 발생하는 이슈 기록
