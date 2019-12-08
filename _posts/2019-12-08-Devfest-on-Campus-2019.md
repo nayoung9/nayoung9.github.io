@@ -11,7 +11,7 @@ Created: Dec 08, 2019 6:52 AM
 
 타임테이블은 아래와 같고, 여기에 AI/ML, Web (Frontend), Flutter에 관한 코드랩이 준비되어 있어서 자율적으로 참석할 수 있었다. 그리고 몇 군데의 회사(?)에서 부스를 차려놓아서 설명을 듣거나, 스티커 등을 가져갈 수 있었다. 
 
-![Devfest%20on%20campus%202019/Untitled.png](Devfest%20on%20campus%202019/Untitled.png)
+![Timetable](/assets/images/191218timetable.png)
 
 나는 여기서   Track A → Track B → Track C → codeLab → Track C 를 들었고, 가장 인상 깊게 남은 두 개의 톡을 정리하려고 한다. 그 때 당시에 뭔가 적기도 하고 그랬는데 이제와서 정리 하게 됐다. ㅠㅠ  앞으로는 미리미리 정리해서 까먹지 않은 상태로 뭘 해야지! 
 
@@ -27,7 +27,7 @@ What's new in Tensorflow2.0?
 
     아래 그림을 보면 2.0의 프린트 결과를 통해 객체 안에 값이 이미 계산되어 들어있는 것을 확인할 수 있다.
 
-    ![Devfest%20on%20campus%202019/Untitled%201.png](Devfest%20on%20campus%202019/Untitled%201.png)
+    ![](Devfest%20on%20campus%202019/Untitled%201.png)
 
 - 전역변수 초기화 없고 자동으로 되며 파이썬 변수를 이용한 연산이 가능해 졌다
 
