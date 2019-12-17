@@ -1,10 +1,8 @@
 ---
 layout: post
-title: What is liftOver? 
+title: What is liftOver? / Liftover tools 사용하기!
 ---
 # Liftover tools 사용하기!
-
-Created: Dec 17, 2019 9:15 PM
 
 ### Liftover 란?
 
