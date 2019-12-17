@@ -2,9 +2,7 @@
 layout: post
 title: What is liftOver? / Liftover tools 사용하기!
 ---
-# Liftover tools 사용하기!
-
-### Liftover 란?
+## Liftover 란?
 
 같은 종의 서로 다른 버전의 유전체 정보를 활용해서 내가 가지고 있는 정보의 다른 버전상의 정보로 변환하는 작업(?)이다. 사람 유전체를 수능특강 교재에 비유하면(..) 수능특강 교재는 매 해 새로운 정보들이 추가되거나, 기존 정보중에 일부가 빠지면서 교체되어 다음 해 수능특강 교재로 버전업이 되는데, 1단원을 집합으로 시작해서 연이어 나오는 내용의 뼈대는 크게 같다. 인강 강사들이 수능특강을 가지고 자기만의 강의자료를 만든다고 할 때, 이 부분은 수능특강 a~b p  참고와 같은 주석을 붙이는데, 학생 입장에서 작년에 결제하고 얻은 교재를 재수할 때 또 써먹으려고 새 교재에서 a~b 페이지를 찾고 싶은 상황에!  liftOver tool을 활용하면 이전 교재의 a~bp → 현재 교재의 c~dp 를 얻을 수 있겠다! 
 
@@ -31,7 +29,7 @@ UCSC genome browser 에서 제공하는 liftOver tool 이 있고,
 [What is CrossMap ? - CrossMap 0.4.0 documentation](http://crossmap.sourceforge.net/)
 
 ---
-
+## Liftover tool 사용하기!
 연구실에서는 주로 liftOver tool을 활용하므로 이를 좀 더 자세히 살펴보면 
 
     liftOver - Move annotations from one assembly to another
